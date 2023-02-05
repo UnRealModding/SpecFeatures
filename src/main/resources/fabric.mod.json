@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "specfeatures",
+  "version": "${version}",
+
+  "name": "SpecFeatures",
+  "description": "Features to aid in spectating",
+  "authors": [
+    "UnRealDinnerbone"
+  ],
+  "license": "MIT",
+  "icon": "assets/modid/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.unrealdinnerbone.specfeatures.SpecFeatures"
+    ]
+  },
+  "mixins": [
+    "specfeatures.mixins.json"
+  ],
+
+  "depends": {
+
+  }
+}
