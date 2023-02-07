@@ -9,7 +9,8 @@
     "MinecraftMixin",
     "PlayerMixin",
     "HorseMixin",
-    "LivingEntityRendererMixin"
+    "LivingEntityRendererMixin",
+    "KeyboardHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

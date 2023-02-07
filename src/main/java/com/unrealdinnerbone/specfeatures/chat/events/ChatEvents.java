@@ -1,28 +1,26 @@
-package com.unrealdinnerbone.specfeatures.chat;
+package com.unrealdinnerbone.specfeatures.chat.events;
 
-import com.unrealdinnerbone.specfeatures.chat.api.IChatFilter;
-import net.minecraft.network.chat.Component;
 import com.unrealdinnerbone.specfeatures.features.Features;
 import com.unrealdinnerbone.specfeatures.util.MessageSystem;
+import net.kyori.adventure.text.Component;
 
 import java.util.List;
 
-public class AchievementFilter implements IChatFilter {
-    @Override
-    public Component filter(Component component) {
-        String message = component.getString().replace("[SI]", "");
-        String[] split = message.split(" ");
-        if(split.length > 1) {
-            String name = split[1];
-            if(Features.W_ACHIEVEMENT.isAllowed()) {
+public class ChatEvents {
+
+    public static void onAchievement(Component achievement, String message) {
+        if(Features.W_ACHIEVEMENT.isAllowed()) {
+            String[] split = message.replace("[SI]", "").split(" ");
+            if (split.length > 1) {
+                String name = split[1];
                 switch (Features.W_ACHIEVEMENT.getEnumValue()) {
                     case CHAT -> MessageSystem.addMessage(createOrderList(name));
                     case MSG -> MessageSystem.addCommand(createOrderListCommand(name));
                 }
             }
         }
-        return component;
     }
+
     public static List<String> createOrderList(String name) {
         return List.of("W achievement " + name,
                 "W achievements " + name,
@@ -38,4 +36,5 @@ public class AchievementFilter implements IChatFilter {
                 "msg " + name + " Quadruple achievement W",
                 "msg " + name + " Massive achievement W");
     }
+
 }

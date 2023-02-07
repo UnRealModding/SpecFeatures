@@ -1,12 +1,12 @@
-package com.unrealdinnerbone.specfeatures.chat;
+package com.unrealdinnerbone.specfeatures.chat.reformater;
 
-import com.unrealdinnerbone.specfeatures.chat.api.IChatFilter;
+import com.unrealdinnerbone.specfeatures.chat.api.IChatReformater;
 import com.unrealdinnerbone.specfeatures.chat.api.Weapon;
 import com.unrealdinnerbone.specfeatures.features.Features;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 
-public class PlayerDamagePlayerFilter implements IChatFilter {
+public class PlayerDamagePlayerFilter implements IChatReformater {
     @Override
     public Component filter(Component component) {
         if (Features.FANCY_CHAT.isAllowed()) {

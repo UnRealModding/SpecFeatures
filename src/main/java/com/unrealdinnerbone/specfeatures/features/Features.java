@@ -18,6 +18,8 @@ public class Features
     public static EnumFeature<MessageType> W_ACHIEVEMENT = register(new EnumFeature<>("w_achievement", true, MessageType.CHAT, MessageType.values()));
     public static BasicFeature HORSE_STATS = register(new BasicFeature("horse_stats", true));
 
+    public static BasicFeature JSON_CHAT = register(new BasicFeature("json_chat", true));
+
     public static ListFeature<ChatType> CHAT_NARRATOR = register(new ListFeature<>("chat_narrator", true, List.of(ChatType.ACHIEVEMENT, ChatType.CRAFT_DIAMOND_LEGGINGS), ChatType.CHAT_TYPES.stream().map(ChatType::name).toList(), ChatType::name, type -> ChatType.CHAT_TYPES.stream().filter(chatType -> chatType.name().equalsIgnoreCase(type)).findFirst().orElse(null)));
 
 
